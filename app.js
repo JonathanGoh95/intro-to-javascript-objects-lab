@@ -252,3 +252,52 @@ Exercise 16
 Solve Exercise 16 here:
 */
 console.log(game);
+
+/*
+Exercise 17
+1. Arrange the Pokémon in `game.party` by their HP. The one with the highest HP should come first.
+2. You'll need to use the `.sort()` method. How does the compare function work in sorting numbers?
+
+
+Solve Exercise 17 here:
+*/
+console.log(
+  game.party.sort(function (a, b) {
+    return b.hp - a.hp;
+  })
+);
+
+/*
+Exercise 18
+Add a new property to the `game` object called `collection` and initialize its value to an empty array.
+
+Copy the `catchPokemon` method you wrote in Exercise Twelve and paste it below. Modify it so that:
+  - Ensure that no more than six Pokemon can be in the party at any time. 
+    Excess Pokemon should be placed in the `game.collection` array.
+  - It's up to you how to distribute Pokemon in a situation where more than six 
+    would be placed into the `game.party` array.
+
+Again, for this exercise, it's okay to have a negative number of pokeballs.
+
+After updating the method, use it by calling it and passing in a pokemon object of your choice from the `pokemon` data to catch it.
+
+Also, log the `game.items` array to confirm that the pokeball quantity is being decremented.
+
+Solve Exercise 18 here:
+*/
+game.collection = [];
+game.catchPokemon = (pokemonObj) => {
+  if (game.party.length > 6) {
+    game.collection.push(pokemonObj);
+    for (let i = 6; i < game.party.length; i++) {
+      game.collection.push(game.party[i]);
+      game.party.pop();
+    }
+    game.items[1].quantity--;
+  } else {
+    game.party.push(pokemonObj);
+    game.items[1].quantity--;
+  }
+};
+
+console.log(game.catchPokemon(pokemon[50]));
