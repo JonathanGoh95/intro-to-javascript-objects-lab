@@ -120,11 +120,11 @@ Exercise 9
 
 Solve Exercise 9 here:
 */
-/* for (let i = 0; i < pokemon.length; i++) {
+for (let i = 0; i < pokemon.length; i++) {
   if (pokemon[i].starter === true) {
     console.log(pokemon[i].name);
   }
-} */
+}
 
 /*
 Exercise 10
@@ -251,7 +251,7 @@ Exercise 16
 
 Solve Exercise 16 here:
 */
-// console.log(game);
+console.log(game);
 
 /*
 Exercise 17
@@ -261,11 +261,11 @@ Exercise 17
 
 Solve Exercise 17 here:
 */
-/* console.log(
+console.log(
   game.party.sort(function (a, b) {
     return b.hp - a.hp;
   })
-); */
+);
 
 /*
 Exercise 18
@@ -285,7 +285,7 @@ Also, log the `game.items` array to confirm that the pokeball quantity is being 
 
 Solve Exercise 18 here:
 */
-/* game.collection = [];
+game.collection = [];
 game.catchPokemon = (pokemonObj) => {
   game.party.push(pokemonObj);
   game.items[1].quantity--;
@@ -296,7 +296,7 @@ game.catchPokemon = (pokemonObj) => {
   console.log(game.items);
 };
 
-game.catchPokemon(pokemon[60]); */
+game.catchPokemon(pokemon[60]);
 // console.log(game);
 
 /*
@@ -309,7 +309,7 @@ Also, ensure that the Pokemon isn't added to the `game.party` or the `game.colle
 
 Solve Exercise 19 here:
 */
-/* game.catchPokemon = (pokemonObj) => {
+game.catchPokemon = (pokemonObj) => {
   if (game.items[1].quantity === 0) {
     return console.log(
       `There are not enough pokeballs to catch the desired Pokemon.`
@@ -324,7 +324,7 @@ Solve Exercise 19 here:
   console.log(game.items);
 };
 
-game.catchPokemon(pokemon[100]); */
+game.catchPokemon(pokemon[100]);
 
 /*
 Exercise 20
